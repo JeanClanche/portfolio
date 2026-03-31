@@ -8,5 +8,5 @@ async function addNav() {
 }
 
 document.addEventListener("DOMContentLoaded", async function() {//quand la page est chargée
-    addNav()
+    //addNav()
 })
