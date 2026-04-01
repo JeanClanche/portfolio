@@ -10,6 +10,11 @@
         "desc" : "Feuilles de style en cascade pour la mise en forme du HTML"
     },
     {
+        "pic" : "pictures/competences/js.png",
+        "name" : "JavaScript",
+        "desc" : "Langage de programmation web"
+    },
+    {
         "pic" : "pictures/competences/php.png",
         "name" : "PHP",
         "desc" : "Langage de programmation WEB coté serveur"
@@ -20,9 +25,9 @@
         "desc" : "Langage de requêtes structurées permettant de communiquer avec une base de données"
     },
     {
-        "pic" : "pictures/competences/js.png",
-        "name" : "JavaScript",
-        "desc" : "Langage de programmation web"
+        "pic" : "pictures/competences/python.png",
+        "name" : "Python",
+        "desc" : "Langage de programmation interprété orienté objet"
     },
     {
         "pic" : "pictures/competences/java.png",
