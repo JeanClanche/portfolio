@@ -9,6 +9,7 @@ async function addNav() {
 
 document.addEventListener("DOMContentLoaded", async function() {
 
+    //ferme la navbar après un clic sur l'un les liens
     const links = document.querySelectorAll('a.nav-link')
     links.forEach((e) => {
         e.addEventListener('click', function(){
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         })
     })
 
+    //effet stylés quand on passe la souris sur ces elements
     const spe = document.querySelectorAll('#slam, #sisr')
     spe.forEach((e) => {
 
@@ -30,5 +32,36 @@ document.addEventListener("DOMContentLoaded", async function() {
             //e.removeAttribute('data-bs-theme')
             //e.classList.add()
         })
+    })
+
+
+    //remplissage des compétences à partir du json
+    const json = await fetch('data/competences.json')
+    const competences = JSON.parse(await json.text())
+    const container = document.getElementById('competencesContainer')
+    competences.forEach((e) => {
+
+        const card = document.createElement('div')
+        card.classList.add('card', 'p-4', 'pb-0', 'm-3')
+        card.setAttribute('style', 'width: 15rem;')
+
+        const img = document.createElement('img')
+        img.setAttribute('src', e['pic'])
+
+        const body = document.createElement('div')
+        body.classList.add('card-body')
+
+        const titre = document.createElement('h5')
+        titre.classList.add('card-title')
+        titre.textContent = e['name']
+
+        const txt = document.createElement('p')
+        txt.classList.add('card-text')
+        txt.textContent = e['desc']
+
+
+        body.append(titre, txt)
+        card.append(img, body)
+        container.append(card)
     })
 })

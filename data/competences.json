@@ -1,0 +1,42 @@
+[
+    {
+        "pic" : "pictures/competences/html.png",
+        "name" : "HTML",
+        "desc" : "Langage de balisage WEB de base"
+    },
+    {
+        "pic" : "pictures/competences/css.png",
+        "name" : "CSS",
+        "desc" : "Feuilles de style en cascade pour la mise en forme du HTML"
+    },
+    {
+        "pic" : "pictures/competences/php.png",
+        "name" : "PHP",
+        "desc" : "Langage de programmation WEB coté serveur"
+    },
+    {
+        "pic" : "pictures/competences/sql.png",
+        "name" : "SQL",
+        "desc" : "Langage de requêtes structurées permettant de communiquer avec une base de donnée"
+    },
+    {
+        "pic" : "pictures/competences/js.webp",
+        "name" : "JavaScript",
+        "desc" : "Langage de programmation web"
+    },
+    {
+        "pic" : "pictures/competences/",
+        "name" : "",
+        "desc" : ""
+    },
+    {
+        "pic" : "pictures/competences/",
+        "name" : "",
+        "desc" : ""
+    },
+    {
+        "pic" : "pictures/competences/",
+        "name" : "",
+        "desc" : ""
+    }
+]
