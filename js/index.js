@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     competences.forEach((e) => {
 
         const col = document.createElement('div')
-        col.classList.add('col-md-3', 'col-6')
+        col.classList.add('col-6', 'col-md-2')
 
         const card = document.createElement('div')
         card.classList.add('card', 'p-4', 'pb-0', 'mb-3', 'text-center')
