@@ -43,6 +43,10 @@
         "pic" : "pictures/competences/symfony.jpg",
         "name" : "Symfony",
         "desc" : "Framework open-source pour PHP"
+    },{
+        "pic" : "pictures/competences/virtualbox.png",
+        "name" : "Oracle VirtualBox",
+        "desc" : "Logiciel libre de virtualisation"
     },
     {
         "pic" : "pictures/competences/git.png",
