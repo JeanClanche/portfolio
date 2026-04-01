@@ -8,5 +8,11 @@ async function addNav() {
 }
 
 document.addEventListener("DOMContentLoaded", async function() {//quand la page est chargée
-    //addNav()
+    const a = document.querySelectorAll('a.nav-link')
+    a.forEach((e) => {
+        console.log(e)
+        e.addEventListener('click', function(){
+            document.getElementById('close').click()
+        })
+    })
 })

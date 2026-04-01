@@ -16,38 +16,36 @@
     <body class="bg-body-tertiary">
 
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top nav-underline" id="nav">
-
+        <nav class="navbar bg-body-tertiary sticky-top">
             <div class="container-fluid">
-
-                <a class="navbar-brand" href="#">Verdier</a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <a class="navbar-brand" href="#">Pierre-Maxime Verdier</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#presentation">Présentation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#formation">Formation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#competences">Compétences</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#veille">Veille</a>
-                        </li>
-                    </ul>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Portfolio</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#formation">Formation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#competences">Compétences</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#veille">Veille</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
             </div>
-
         </nav>
         <!-- end navbar-->
         
+        <!-- contenu -->
         <div class="container-fluid" data-bs-spy="scroll" data-bs-target="#nav">
 
             <div id="presentation" class="row bg-dark text-center p-5">
@@ -159,6 +157,7 @@ Donec diam urna, posuere ac vehicula in, commodo ullamcorper tortor. Aliquam ut 
             </div>
 
         </div>
+        <!-- fin contenu -->
 
     </body>
 
