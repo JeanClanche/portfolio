@@ -41,16 +41,19 @@ document.addEventListener("DOMContentLoaded", async function() {
     const container = document.getElementById('competencesContainer')
     competences.forEach((e) => {
 
+        const col = document.createElement('div')
+        col.classList.add('col-md-3', 'col-6')
+
         const card = document.createElement('div')
         card.classList.add('card', 'p-4', 'pb-0', 'mb-3', 'text-center')
-        card.setAttribute('style', 'width: 15rem;')
+        //card.setAttribute('style', 'width: 15rem;')
 
         const img = document.createElement('img')
         img.classList.add('rounded-3', 'img-fluid')
         img.setAttribute('src', e['pic'])
 
         const body = document.createElement('div')
-        body.classList.add('card-body')
+        body.classList.add('card-body', 'px-0')
 
         const titre = document.createElement('h5')
         titre.classList.add('card-title')
@@ -63,7 +66,8 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         body.append(titre, txt)
         card.append(img, body)
-        container.append(card)
+        col.append(card)
+        container.append(col)
 
     })
 })
