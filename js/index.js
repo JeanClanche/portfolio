@@ -1,12 +1,3 @@
-const url = window.location.pathname.split('/')
-const page = url[url.length -1]
-
-async function addNav() {
-    const resp = await fetch("includes/navbar.html");
-    const html = await resp.text();
-    document.body.insertAdjacentHTML("afterbegin", html);
-}
-
 document.addEventListener("DOMContentLoaded", async function() {
 
     //ferme la navbar après un clic sur l'un les liens
@@ -74,3 +65,49 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     })
 })
+
+/*
+const url = window.location.pathname.split('/')
+const page = url[url.length -1]
+*/
+
+
+const url = 'https://incidents-server.oecdai.org/api/v1/incidents/fetch-incidents'
+const data = {
+    and_condition : false,
+    countries : [],
+    format: 'JSON',
+    from_date: "1900-04-01",
+    num_results: 20,
+    order_by : 'date',
+    properties_config: {
+        ai_tasks : [],
+        autonomy_levels:[],
+        business_functions: [],
+        harm_levels: [],
+        harm_types: [],
+        harmed_entities: [],
+        industries : [],
+        languages: [],
+        principles: []
+    },
+    search_terms : [],
+    to_date: "2026-04-01"
+}
+
+async function getIncidents(){
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    const result = await JSON.parse(await response.text())
+
+    console.log(result['incidents'])
+    return result['incidents']
+}
+
+getIncidents()
