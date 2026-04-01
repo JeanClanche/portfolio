@@ -42,10 +42,11 @@ document.addEventListener("DOMContentLoaded", async function() {
     competences.forEach((e) => {
 
         const card = document.createElement('div')
-        card.classList.add('card', 'p-4', 'pb-0', 'm-3')
+        card.classList.add('card', 'p-4', 'pb-0', 'mb-3', 'text-center')
         card.setAttribute('style', 'width: 15rem;')
 
         const img = document.createElement('img')
+        img.classList.add('rounded', 'img-fluid')
         img.setAttribute('src', e['pic'])
 
         const body = document.createElement('div')
@@ -63,5 +64,6 @@ document.addEventListener("DOMContentLoaded", async function() {
         body.append(titre, txt)
         card.append(img, body)
         container.append(card)
+
     })
 })

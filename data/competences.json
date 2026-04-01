@@ -17,7 +17,7 @@
     {
         "pic" : "pictures/competences/sql.png",
         "name" : "SQL",
-        "desc" : "Langage de requêtes structurées permettant de communiquer avec une base de donnée"
+        "desc" : "Langage de requêtes structurées permettant de communiquer avec une base de données"
     },
     {
         "pic" : "pictures/competences/js.webp",
@@ -25,18 +25,23 @@
         "desc" : "Langage de programmation web"
     },
     {
-        "pic" : "pictures/competences/",
-        "name" : "",
-        "desc" : ""
+        "pic" : "pictures/competences/java.png",
+        "name" : "Java",
+        "desc" : "Langage de programmation orienté objet"
     },
     {
-        "pic" : "pictures/competences/",
-        "name" : "",
-        "desc" : ""
+        "pic" : "pictures/competences/bootstrap.png",
+        "name" : "Bootstrap",
+        "desc" : "Framework open-source orienté frontend et responsive"
     },
     {
-        "pic" : "pictures/competences/",
-        "name" : "",
-        "desc" : ""
+        "pic" : "pictures/competences/symfony.jpg",
+        "name" : "Symfony",
+        "desc" : "Framework open-source pour PHP"
+    },
+    {
+        "pic" : "pictures/competences/git.png",
+        "name" : "Git",
+        "desc" : "Logiciel de gestion de versions open-source"
     }
 ]
