@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         card.setAttribute('style', 'width: 15rem;')
 
         const img = document.createElement('img')
-        img.classList.add('rounded', 'img-fluid')
+        img.classList.add('rounded-3', 'img-fluid')
         img.setAttribute('src', e['pic'])
 
         const body = document.createElement('div')
