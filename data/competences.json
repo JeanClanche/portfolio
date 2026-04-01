@@ -2,61 +2,73 @@
     {
         "pic" : "pictures/competences/html.png",
         "name" : "HTML",
-        "desc" : "Langage de balisage WEB de base"
+        "desc" : "Langage de balisage WEB de base",
+        "link" : "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language"
     },
     {
         "pic" : "pictures/competences/css.png",
         "name" : "CSS",
-        "desc" : "Feuilles de style en cascade pour la mise en forme du HTML"
+        "desc" : "Feuilles de style en cascade pour la mise en forme du HTML",
+        "link" : "https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade"
     },
     {
         "pic" : "pictures/competences/js.png",
         "name" : "JavaScript",
-        "desc" : "Langage de programmation web"
+        "desc" : "Langage de programmation web",
+        "link" : "https://fr.wikipedia.org/wiki/JavaScript"
     },
     {
         "pic" : "pictures/competences/php.png",
         "name" : "PHP",
-        "desc" : "Langage de programmation WEB coté serveur"
+        "desc" : "Langage de programmation WEB coté serveur",
+        "link" : "https://fr.wikipedia.org/wiki/PHP"
     },
     {
         "pic" : "pictures/competences/sql.png",
         "name" : "SQL",
-        "desc" : "Langage de requêtes structurées permettant de communiquer avec une base de données"
+        "desc" : "Langage de requêtes structurées permettant de communiquer avec une base de données",
+        "link" : "https://fr.wikipedia.org/wiki/Structured_Query_Language"
     },
     {
         "pic" : "pictures/competences/python.png",
         "name" : "Python",
-        "desc" : "Langage de programmation interprété orienté objet"
+        "desc" : "Langage de programmation interprété orienté objet",
+        "link" : "https://fr.wikipedia.org/wiki/Python_(langage)"
     },
     {
         "pic" : "pictures/competences/java.png",
         "name" : "Java",
-        "desc" : "Langage de programmation orienté objet"
+        "desc" : "Langage de programmation orienté objet",
+        "link" : "https://fr.wikipedia.org/wiki/Java_(langage)"
     },
     {
         "pic" : "pictures/competences/bootstrap.png",
         "name" : "Bootstrap",
-        "desc" : "Framework open-source orienté frontend et responsive"
+        "desc" : "Framework open-source orienté frontend et responsive",
+        "link" : "https://fr.wikipedia.org/wiki/Bootstrap_(framework)"
     },
     {
         "pic" : "pictures/competences/symfony.jpg",
         "name" : "Symfony",
-        "desc" : "Framework open-source pour PHP"
+        "desc" : "Framework open-source pour PHP",
+        "link" : "https://fr.wikipedia.org/wiki/Symfony"
     },
     {
         "pic" : "pictures/competences/virtualbox.png",
         "name" : "Oracle VirtualBox",
-        "desc" : "Logiciel libre de virtualisation"
+        "desc" : "Logiciel libre de virtualisation",
+        "link" : "https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox"
     },
     {
         "pic" : "pictures/competences/agile.png",
         "name" : "Méthode AGILE",
-        "desc" : "Stratégie de gestion de projet en équipe"
+        "desc" : "Stratégie de gestion de projet en équipe",
+        "link" : "https://fr.wikipedia.org/wiki/M%C3%A9thode_agile"
     },
     {
         "pic" : "pictures/competences/git.png",
         "name" : "Git",
-        "desc" : "Logiciel de gestion de versions open-source"
+        "desc" : "Logiciel de gestion de versions open-source",
+        "link" : "https://fr.wikipedia.org/wiki/Git"
     }
 ]

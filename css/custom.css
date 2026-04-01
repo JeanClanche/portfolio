@@ -2,3 +2,7 @@
     background-image: url('../pictures/seamless.webp');
     background-attachment: fixed;
 }
+
+.card{
+    cursor: pointer;
+}

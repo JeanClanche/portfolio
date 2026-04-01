@@ -47,6 +47,9 @@ document.addEventListener("DOMContentLoaded", async function() {
         const card = document.createElement('div')
         card.classList.add('card', 'p-4', 'pb-0', 'mb-3', 'text-center')
         //card.setAttribute('style', 'width: 15rem;')
+        card.addEventListener('click', function(){
+            window.open(e['link'])
+        })
 
         const img = document.createElement('img')
         img.classList.add('rounded-3', 'img-fluid')
