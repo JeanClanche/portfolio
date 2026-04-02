@@ -148,7 +148,7 @@ async function updateOCDE() {
         btn.setAttribute('aria-expanded', 'false')
         const btnHeader = document.createElement('span')
         const btnIcon = document.createElement('i')
-        btnIcon.classList.add('fa-solid', 'fa-newspaper')
+        btnIcon.classList.add('fa-solid', 'fa-newspaper', 'me-1')
         const accBtnTxt = document.createElement('span')
         accBtnTxt.textContent = e['title']
         btnHeader.append(btnIcon, accBtnTxt)
