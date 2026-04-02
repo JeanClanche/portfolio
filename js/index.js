@@ -130,7 +130,7 @@ async function updateOCDE() {
     //vide l'accordeon et ajoute un icone de chargement
     clearAccordeon()
     const spinRow = document.createElement('div')
-    spinRow.classList.add('row', 'justify-content-center', 'my-3')
+    spinRow.classList.add('row', 'justify-content-center', 'py-5')
     const spin = document.createElement('div')
     spin.classList.add('spinner-grow', 'text-primary')
     spin.setAttribute('style', 'width: 8rem; height: 8rem;')
