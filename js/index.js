@@ -143,7 +143,6 @@ async function updateOCDE() {
 
     document.getElementById('nbResultOCDE').textContent = response['total_results']
 
-
     //création des items de l'accordeon
     articles.forEach((e) => {
         //console.log(e)
@@ -277,6 +276,17 @@ async function updateOCDE() {
 
     //supprime l'icone de chargement
     spinRow.parentElement.removeChild(spinRow)
+
+    //si aucun incident n'a été renseigné dans l'accordeon
+    if(!accordeon.lastChild){
+        const errDiv = document.createElement('div')
+        errDiv.classList.add('row')
+        const err = document.createElement('span')
+        err.classList.add('fs-4', 'text-center')
+        err.textContent = "Aucun article trouvé pour cette date"
+        errDiv.append(err)
+        accordeon.append(errDiv)
+    }
 }
 
 function clearAccordeon(){
