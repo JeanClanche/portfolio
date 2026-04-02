@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", async function() {
         })
     })
 
+    //selection d'une date par défaut dans le select
+    const dateSelect = document.getElementById('dateSelect')
+    dateSelect.value = getDateNow()
 
     //remplissage des compétences à partir du json
     const json = await fetch('data/competences.json')
@@ -54,7 +57,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         body.classList.add('card-body', 'px-0')
 
         const titre = document.createElement('h5')
-        titre.classList.add('card-title')
+        titre.classList.add('card-title', 'fw-bold')
         titre.textContent = e['name']
 
         const txt = document.createElement('p')
@@ -81,12 +84,14 @@ async function getIncidents(){
     /**
      * Fetch les articles de l'api de l'OCDE concernant les incidents et risques liés à l'utilisation de l'IA
      */
+    const date = document.getElementById('dateSelect')
     const url = 'https://incidents-server.oecdai.org/api/v1/incidents/fetch-incidents'
     const data = {
         and_condition : false,
         countries : [],
         format: 'JSON',
         from_date: "1900-04-01",
+        to_date: date.value,
         num_results: 10,
         order_by : 'date',
         properties_config: {
@@ -100,8 +105,7 @@ async function getIncidents(){
             languages: [],
             principles: []
         },
-        search_terms : [],
-        to_date: getDateNow()
+        search_terms : []
     }
     const response = await fetch(url, {
         method: 'POST',
@@ -116,7 +120,6 @@ async function getIncidents(){
     //console.log(result)
     return result
 }
-
 
 async function updateOCDE() {
     /**
