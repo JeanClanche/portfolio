@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     competences.forEach((e) => {
 
         const col = document.createElement('div')
-        col.classList.add('col-6', 'col-md-2')
+        col.classList.add('col-6', 'col-md-3', 'col-lg-2')
 
         const card = document.createElement('div')
         card.classList.add('card', 'p-4', 'pb-0', 'mb-3', 'text-center')
@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", async function() {
         container.append(col)
 
     })
+
+    updateOCDE()
 })
 
 /*
@@ -78,7 +80,7 @@ const data = {
     countries : [],
     format: 'JSON',
     from_date: "1900-04-01",
-    num_results: 20,
+    num_results: 10,
     order_by : 'date',
     properties_config: {
         ai_tasks : [],
@@ -106,8 +108,112 @@ async function getIncidents(){
 
     const result = await JSON.parse(await response.text())
 
-    console.log(result['incidents'])
-    return result['incidents']
+    console.log(result)
+    return result
 }
 
-getIncidents()
+
+async function updateOCDE() {
+    const response = await getIncidents()
+    const articles = response['incidents']
+
+    document.getElementById('nbResultOCDE').textContent = response['total_results']
+
+    const accordeon = document.getElementById('accordeon')
+
+    articles.forEach((e) => {
+        //console.log(e)
+        const item = document.createElement('div')
+        item.classList.add('accordion-item')
+
+        const header = document.createElement('h2')
+        header.classList.add('accordion-header')
+
+        const btn = document.createElement('button')
+        btn.classList.add('accordion-button', 'collapsed')
+        btn.setAttribute('type', 'button')
+        btn.setAttribute('data-bs-toggle', 'collapse')
+        btn.setAttribute('data-bs-target', `#${e['id']}`)
+        btn.setAttribute('aria-expanded', 'false')
+        btn.textContent = e['title']
+
+        const collapse = document.createElement('div')
+        collapse.classList.add('accordion-collapse', 'collapse')
+        collapse.setAttribute('id', e['id'])
+        collapse.setAttribute('data-bs-parent', '#accordeon')
+
+        const body = document.createElement('div')
+        body.classList.add('accordion-body')
+        
+
+        const rowBody = document.createElement('div')
+        rowBody.classList.add('row')
+
+        const colImg = document.createElement('div')
+        colImg.classList.add('col-md-4', 'col-12', 'mb-3')
+        const colArticle = document.createElement('div')
+        colArticle.classList.add('col')
+
+        const img = document.createElement('img')
+        img.setAttribute('src', e['image'])
+        img.classList.add('img-fluid', 'rounded')
+
+        const articleHeader = document.createElement('div')
+        articleHeader.classList.add('row', 'mb-2', 'justify-content-around')
+
+        const colDate = document.createElement('div')
+        colDate.classList.add('col', 'text-center')
+        const dateIcon = document.createElement('i')
+        dateIcon.classList.add('fa-solid', 'fa-calendar', 'me-1')
+        const date = document.createElement('span')
+        date.textContent = e['date']
+
+        const colCountry = document.createElement('div')
+        colCountry.classList.add('col', 'text-center')
+        const countryIcon = document.createElement('i')
+        countryIcon.classList.add('fa-solid', 'fa-location-dot', 'me-1')
+        const country = document.createElement('span')
+        country.textContent = e['location']['country']
+
+        const txtRow = document.createElement('div')
+        txtRow.classList.add('row', 'mb-3')
+        const txt = document.createElement('span')
+        txt.textContent = e['summary']
+
+        const footerRow = document.createElement('div')
+        footerRow.classList.add('row', 'justify-content-around', 'justify-content-md-end')
+        const colLinkBtn = document.createElement('div')
+        colLinkBtn.classList.add('col-md-4', 'col-8', 'text-center', 'text-md-end')
+        const linkIcon = document.createElement('i')
+        linkIcon.classList.add('fa-solid', 'fa-arrow-up-right-from-square', 'me-1')
+        const btnTxt = document.createElement('span')
+        btnTxt.textContent = 'Voir les articles'
+        const linkBtn = document.createElement('a')
+        linkBtn.classList.add('btn', 'btn-outline-info')
+        linkBtn.append(linkIcon, btnTxt)
+        linkBtn.setAttribute('role', 'button')
+        linkBtn.addEventListener('click', function(){
+            window.open(`https://oecd.ai/en/incidents/${e['id']}`)
+        })
+
+
+        colDate.append(dateIcon, date)
+        colCountry.append(countryIcon, country)
+        articleHeader.append(colDate, colCountry)
+        txtRow.append(txt)
+        colLinkBtn.append(linkBtn)
+        footerRow.append(colLinkBtn)
+
+        colImg.append(img)
+        colArticle.append(articleHeader, txtRow, footerRow)
+        rowBody.append(colImg, colArticle)
+
+
+        header.append(btn)
+        body.append(rowBody)
+        collapse.append(body)
+
+        item.append(header, collapse)
+        accordeon.append(item)
+    })
+}
