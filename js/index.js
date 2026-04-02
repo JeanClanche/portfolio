@@ -178,7 +178,7 @@ async function updateOCDE() {
         const dateIcon = document.createElement('i')
         dateIcon.classList.add('fa-solid', 'fa-calendar', 'me-1')
         const date = document.createElement('span')
-        date.textContent = e['date']
+        date.textContent = dateENtoFR(e['date'])
 
         const colCountry = document.createElement('div')
         colCountry.classList.add('col', 'text-center')
@@ -240,4 +240,24 @@ function clearAccordeon(){
     while(acc.lastChild){
         acc.removeChild(acc.lastChild)
     }
+}
+
+function dateENtoFR(date){
+    const list = date.split('-')
+    const mois = {
+        "01" : "Janvier",
+        "02" : "Février",
+        "03" : "Mars",
+        "04" : "Avril",
+        "05" : "Mai",
+        "06" : "Juin",
+        "07" : "Juillet",
+        "08" : "Aout",
+        "09" : "Septembre",
+        "10" : "Octobre",
+        "11" : "Novembre",
+        "12" : "Décembre",
+    }
+    const result = `${list[2]} ${mois[list[1]]} ${list[0]}`
+    return result
 }
