@@ -14,14 +14,12 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         e.addEventListener('mouseover', function(){
             e.classList.add('shadow-lg')
-            //e.setAttribute('data-bs-theme', 'light')
-            //e.classList.remove()
+            e.classList.add('border-primary')            
         })
         
         e.addEventListener('mouseout', function(){
             e.classList.remove('shadow-lg')
-            //e.removeAttribute('data-bs-theme')
-            //e.classList.add()
+            e.classList.remove('border-primary')            
         })
     })
 
@@ -40,6 +38,12 @@ document.addEventListener("DOMContentLoaded", async function() {
         //card.setAttribute('style', 'width: 15rem;')
         card.addEventListener('click', function(){
             window.open(e['link'])
+        })
+        card.addEventListener('mouseover', function(){
+            card.classList.add('border-primary', 'shadow-lg')
+        })
+        card.addEventListener('mouseout', function(){
+            card.classList.remove('border-primary', 'shadow-lg')
         })
 
         const img = document.createElement('img')
@@ -73,31 +77,32 @@ const url = window.location.pathname.split('/')
 const page = url[url.length -1]
 */
 
-
-const url = 'https://incidents-server.oecdai.org/api/v1/incidents/fetch-incidents'
-const data = {
-    and_condition : false,
-    countries : [],
-    format: 'JSON',
-    from_date: "1900-04-01",
-    num_results: 10,
-    order_by : 'date',
-    properties_config: {
-        ai_tasks : [],
-        autonomy_levels:[],
-        business_functions: [],
-        harm_levels: [],
-        harm_types: [],
-        harmed_entities: [],
-        industries : [],
-        languages: [],
-        principles: []
-    },
-    search_terms : [],
-    to_date: getDateNow()
-}
-
 async function getIncidents(){
+    /**
+     * Fetch les articles de l'api de l'OCDE concernant les incidents et risques liés à l'utilisation de l'IA
+     */
+    const url = 'https://incidents-server.oecdai.org/api/v1/incidents/fetch-incidents'
+    const data = {
+        and_condition : false,
+        countries : [],
+        format: 'JSON',
+        from_date: "1900-04-01",
+        num_results: 10,
+        order_by : 'date',
+        properties_config: {
+            ai_tasks : [],
+            autonomy_levels:[],
+            business_functions: [],
+            harm_levels: [],
+            harm_types: [],
+            harmed_entities: [],
+            industries : [],
+            languages: [],
+            principles: []
+        },
+        search_terms : [],
+        to_date: getDateNow()
+    }
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -114,13 +119,17 @@ async function getIncidents(){
 
 
 async function updateOCDE() {
+    /**
+     * Remplis l'accordéon avec les informations récupérées avec l'api de l'OCDE
+     */
     const accordeon = document.getElementById('accordeon')
 
+    //vide l'accordeon et ajoute un icone de chargement
     clearAccordeon()
     const spinRow = document.createElement('div')
     spinRow.classList.add('row', 'justify-content-center', 'my-3')
     const spin = document.createElement('div')
-    spin.classList.add('spinner-border', 'text-primary')
+    spin.classList.add('spinner-grow', 'text-primary')
     spin.setAttribute('style', 'width: 8rem; height: 8rem;')
     spinRow.append(spin)
     accordeon.append(spinRow)
@@ -132,6 +141,7 @@ async function updateOCDE() {
     document.getElementById('nbResultOCDE').textContent = response['total_results']
 
 
+    //création des items de l'accordeon
     articles.forEach((e) => {
         //console.log(e)
         const item = document.createElement('div')
@@ -261,10 +271,15 @@ async function updateOCDE() {
         item.append(header, collapse)
         accordeon.append(item)
     })
+
+    //supprime l'icone de chargement
     spinRow.parentElement.removeChild(spinRow)
 }
 
 function clearAccordeon(){
+    /**
+     * vide l'accordéon
+     */
     const acc = document.getElementById('accordeon')
     while(acc.lastChild){
         acc.removeChild(acc.lastChild)
@@ -272,6 +287,9 @@ function clearAccordeon(){
 }
 
 function dateENtoFR(date){
+    /**
+     * Accepte une date au format YYYY-MM-DDD et renvoie une date au format JJ-MM-AAAA
+     */
     const list = date.split('-')
     const mois = {
         "01" : "Janvier",
@@ -292,6 +310,9 @@ function dateENtoFR(date){
 }
 
 function getDateNow(){
+    /**
+     * Renvoie la date du jour
+     */
     const date = new Date()
     let jour = (date.getUTCDate()).toString()
     let mois =(date.getUTCMonth() + 1).toString()
