@@ -114,12 +114,24 @@ async function getIncidents(){
 
 
 async function updateOCDE() {
+    const accordeon = document.getElementById('accordeon')
+
+    clearAccordeon()
+    const spinRow = document.createElement('div')
+    spinRow.classList.add('row', 'justify-content-center', 'my-3')
+    const spin = document.createElement('div')
+    spin.classList.add('spinner-border', 'text-primary')
+    spin.setAttribute('id', 'spin')
+    spin.setAttribute('style', 'width: 8rem; height: 8rem;')
+    spinRow.append(spin)
+    accordeon.append(spinRow)
+
+
     const response = await getIncidents()
     const articles = response['incidents']
 
     document.getElementById('nbResultOCDE').textContent = response['total_results']
 
-    const accordeon = document.getElementById('accordeon')
 
     articles.forEach((e) => {
         //console.log(e)
@@ -173,7 +185,11 @@ async function updateOCDE() {
         const countryIcon = document.createElement('i')
         countryIcon.classList.add('fa-solid', 'fa-location-dot', 'me-1')
         const country = document.createElement('span')
-        country.textContent = e['location']['country']
+        if(e['location'] == null){
+            country.textContent = "World"
+        }else{
+            country.textContent = e['location']['country']
+        }
 
         const txtRow = document.createElement('div')
         txtRow.classList.add('row', 'mb-3')
@@ -216,4 +232,12 @@ async function updateOCDE() {
         item.append(header, collapse)
         accordeon.append(item)
     })
+    spin.parentElement.removeChild(spin)
+}
+
+function clearAccordeon(){
+    const acc = document.getElementById('accordeon')
+    while(acc.lastChild){
+        acc.removeChild(acc.lastChild)
+    }
 }
