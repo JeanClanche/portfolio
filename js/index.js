@@ -179,7 +179,7 @@ async function updateOCDE() {
         rowBody.classList.add('row')
 
         const colImg = document.createElement('div')
-        colImg.classList.add('col-md-4', 'col-12', 'mb-3', 'align-self-center')
+        colImg.classList.add('col-md-4', 'col-12', 'mb-3', 'align-self-center', 'text-center')
         const colArticle = document.createElement('div')
         colArticle.classList.add('col')
 
