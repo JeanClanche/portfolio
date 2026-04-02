@@ -146,7 +146,13 @@ async function updateOCDE() {
         btn.setAttribute('data-bs-toggle', 'collapse')
         btn.setAttribute('data-bs-target', `#${e['id']}`)
         btn.setAttribute('aria-expanded', 'false')
-        btn.textContent = e['title']
+        const btnHeader = document.createElement('span')
+        const btnIcon = document.createElement('i')
+        btnIcon.classList.add('fa-solid', 'fa-newspaper')
+        const btnTxt = document.createElement('span')
+        btnTxt.textContent = e['title']
+        btnHeader.append(btnIcon, btnTxt)
+        btn.append(btnHeader)
 
         const collapse = document.createElement('div')
         collapse.classList.add('accordion-collapse', 'collapse')
