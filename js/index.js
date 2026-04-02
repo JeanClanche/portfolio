@@ -80,7 +80,7 @@ const data = {
     countries : [],
     format: 'JSON',
     from_date: "1900-04-01",
-    num_results: 10,
+    num_results: 15,
     order_by : 'date',
     properties_config: {
         ai_tasks : [],
@@ -94,7 +94,7 @@ const data = {
         principles: []
     },
     search_terms : [],
-    to_date: "2026-04-01"
+    to_date: getDateNow()
 }
 
 async function getIncidents(){
@@ -121,7 +121,6 @@ async function updateOCDE() {
     spinRow.classList.add('row', 'justify-content-center', 'my-3')
     const spin = document.createElement('div')
     spin.classList.add('spinner-border', 'text-primary')
-    spin.setAttribute('id', 'spin')
     spin.setAttribute('style', 'width: 8rem; height: 8rem;')
     spinRow.append(spin)
     accordeon.append(spinRow)
@@ -232,7 +231,7 @@ async function updateOCDE() {
         item.append(header, collapse)
         accordeon.append(item)
     })
-    spin.parentElement.removeChild(spin)
+    spinRow.parentElement.removeChild(spinRow)
 }
 
 function clearAccordeon(){
@@ -261,3 +260,20 @@ function dateENtoFR(date){
     const result = `${list[2]} ${mois[list[1]]} ${list[0]}`
     return result
 }
+
+function getDateNow(){
+    const date = new Date()
+    let jour = (date.getUTCDate()).toString()
+    let mois =(date.getUTCMonth() + 1).toString()
+    if(jour.length < 2){
+        jour = "0"+jour
+    }
+    if(mois.length < 2){
+        mois = "0"+mois
+    }
+    const result = `${date.getFullYear()}-${mois}-${jour}`
+
+    return result
+}
+
+console.log(getDateNow())
