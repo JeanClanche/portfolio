@@ -80,7 +80,7 @@ const data = {
     countries : [],
     format: 'JSON',
     from_date: "1900-04-01",
-    num_results: 15,
+    num_results: 10,
     order_by : 'date',
     properties_config: {
         ai_tasks : [],
@@ -108,7 +108,7 @@ async function getIncidents(){
 
     const result = await JSON.parse(await response.text())
 
-    console.log(result)
+    //console.log(result)
     return result
 }
 
@@ -161,7 +161,7 @@ async function updateOCDE() {
         rowBody.classList.add('row')
 
         const colImg = document.createElement('div')
-        colImg.classList.add('col-md-4', 'col-12', 'mb-3')
+        colImg.classList.add('col-md-4', 'col-12', 'mb-3', 'align-self-center')
         const colArticle = document.createElement('div')
         colArticle.classList.add('col')
 
@@ -195,6 +195,29 @@ async function updateOCDE() {
         const txt = document.createElement('span')
         txt.textContent = e['summary']
 
+        const rowDetails = document.createElement('div')
+        rowDetails.classList.add('row', 'mb-3')
+        if(e['properties']['harm_types'].length > 0){
+            rowDetails.classList.add('border-danger', 'border', 'rounded', 'border-opacity-50', 'shadow')
+            const colHarm = document.createElement('div')
+            colHarm.classList.add('col', 'text-center', 'align-self-center')
+            colHarm.textContent = "Harm Types"
+            const harmListCol = document.createElement('div')
+            harmListCol.classList.add('col')
+            const dmgList = document.createElement('ul')
+            dmgList.classList.add('list-group', 'list-group-flush', 'mb-0')
+
+            e['properties']['harm_types'].forEach((h) => {
+                const dmg = document.createElement('li')
+                dmg.classList.add('list-group-item')
+                dmg.textContent = h
+                dmgList.append(dmg)
+            })
+
+            harmListCol.append(dmgList)
+            rowDetails.append(colHarm, harmListCol)
+        }
+
         const footerRow = document.createElement('div')
         footerRow.classList.add('row', 'justify-content-around', 'justify-content-md-end')
         const colLinkBtn = document.createElement('div')
@@ -205,7 +228,6 @@ async function updateOCDE() {
         btnTxt.textContent = 'Voir les articles'
         const linkBtn = document.createElement('a')
         linkBtn.classList.add('btn', 'btn-outline-info')
-        linkBtn.append(linkIcon, btnTxt)
         linkBtn.setAttribute('role', 'button')
         linkBtn.addEventListener('click', function(){
             window.open(`https://oecd.ai/en/incidents/${e['id']}`)
@@ -216,11 +238,13 @@ async function updateOCDE() {
         colCountry.append(countryIcon, country)
         articleHeader.append(colDate, colCountry)
         txtRow.append(txt)
+
+        linkBtn.append(linkIcon, btnTxt)
         colLinkBtn.append(linkBtn)
         footerRow.append(colLinkBtn)
 
         colImg.append(img)
-        colArticle.append(articleHeader, txtRow, footerRow)
+        colArticle.append(articleHeader, txtRow, rowDetails, footerRow)
         rowBody.append(colImg, colArticle)
 
 
@@ -275,5 +299,3 @@ function getDateNow(){
 
     return result
 }
-
-console.log(getDateNow())
