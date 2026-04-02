@@ -149,9 +149,9 @@ async function updateOCDE() {
         const btnHeader = document.createElement('span')
         const btnIcon = document.createElement('i')
         btnIcon.classList.add('fa-solid', 'fa-newspaper')
-        const btnTxt = document.createElement('span')
-        btnTxt.textContent = e['title']
-        btnHeader.append(btnIcon, btnTxt)
+        const accBtnTxt = document.createElement('span')
+        accBtnTxt.textContent = e['title']
+        btnHeader.append(btnIcon, accBtnTxt)
         btn.append(btnHeader)
 
         const collapse = document.createElement('div')
