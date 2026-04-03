@@ -249,6 +249,7 @@ async function updateOCDE() {
         const txt = document.createElement('span')
         txt.textContent = e['summary']
 
+        //affichage des types de dommages causés
         const rowDetails = document.createElement('div')
         rowDetails.classList.add('row', 'mb-3')
         if(e['properties']['harm_types'].length > 0){
@@ -270,6 +271,30 @@ async function updateOCDE() {
 
             harmListCol.append(dmgList)
             rowDetails.append(colHarm, harmListCol)
+        }
+
+        //affichages des types de personnes dommagées
+        const rowHarmed = document.createElement('div')
+        rowHarmed.classList.add('row', 'mb-3')
+        if(e['properties']['harm_types'].length > 0){
+            rowHarmed.classList.add('border-warning', 'border', 'rounded', 'border-opacity-50', 'shadow')
+            const colHarm = document.createElement('div')
+            colHarm.classList.add('col', 'text-center', 'align-self-center')
+            colHarm.textContent = "People Harmed"
+            const harmListCol = document.createElement('div')
+            harmListCol.classList.add('col')
+            const dmgList = document.createElement('ul')
+            dmgList.classList.add('list-group', 'list-group-flush', 'mb-0')
+
+            e['properties']['harmed_entities'].forEach((h) => {
+                const dmg = document.createElement('li')
+                dmg.classList.add('list-group-item')
+                dmg.textContent = h
+                dmgList.append(dmg)
+            })
+
+            harmListCol.append(dmgList)
+            rowHarmed.append(colHarm, harmListCol)
         }
 
         const footerRow = document.createElement('div')
@@ -298,7 +323,7 @@ async function updateOCDE() {
         footerRow.append(colLinkBtn)
 
         colImg.append(img)
-        colArticle.append(articleHeader, txtRow, rowDetails, footerRow)
+        colArticle.append(articleHeader, txtRow, rowDetails, rowHarmed, footerRow)
         rowBody.append(colImg, colArticle)
 
 
