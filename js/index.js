@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
+    //affichage du pdf
+    PDFObject.embed("./docs/pix.pdf", "#pix")
+    PDFObject.embed("./docs/secnum.pdf", "#secnum")
+
     //ferme la navbar après un clic sur l'un les liens
     const links = document.querySelectorAll('a.nav-link')
     links.forEach((e) => {

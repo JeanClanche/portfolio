@@ -9,3 +9,7 @@
 .card{
     cursor: pointer;
 }
+
+.pdfobject-container {
+    height: 500px;
+}
