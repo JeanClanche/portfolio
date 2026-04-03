@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             window.open(e['link'])
         })
         const icon = document.createElement('i')
-        icon.classList.add('card-img-top', 'fa-3x')
+        icon.classList.add('card-img-top', 'fa-2x')
         e['icon'].forEach((classe) => {
             icon.classList.add(classe)
         })
