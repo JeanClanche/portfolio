@@ -119,6 +119,7 @@ async function getIncidents(){
      * Fetch les articles de l'api de l'OCDE concernant les incidents et risques liés à l'utilisation de l'IA
      */
     const date = document.getElementById('dateSelect')
+    const filtre = document.getElementById('filtreVeille')
     const url = 'https://incidents-server.oecdai.org/api/v1/incidents/fetch-incidents'
     const data = {
         and_condition : false,
@@ -140,8 +141,10 @@ async function getIncidents(){
             principles: []
         },
         search_terms : [
-            
         ]
+    }
+    if(filtre.value != ""){
+        data['search_terms'].push({type: "KEYWORD", value: filtre.value})
     }
     const response = await fetch(url, {
         method: 'POST',
@@ -343,8 +346,8 @@ async function updateOCDE() {
         const errDiv = document.createElement('div')
         errDiv.classList.add('row')
         const err = document.createElement('span')
-        err.classList.add('fs-4', 'text-center')
-        err.textContent = "Aucun article trouvé pour cette date"
+        err.classList.add('fs-4', 'text-center', "my-5")
+        err.textContent = "Aucun article trouvé avec ces critères"
         errDiv.append(err)
         accordeon.append(errDiv)
     }
