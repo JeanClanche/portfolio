@@ -12,6 +12,23 @@ document.addEventListener("DOMContentLoaded", async function() {
         })
     })
 
+    //mode d'affichage
+    mode.addEventListener('change', function(e){
+        const mode = document.getElementById('mode')
+        const iconeMode = document.getElementById('iconeMode')
+        const html = document.getElementById('html')
+        console.log(mode.checked)
+        if(mode.checked){
+            iconeMode.classList.remove('fa-sun')
+            iconeMode.classList.add('fa-moon')
+            html.setAttribute('data-bs-theme', 'dark')
+        }else{
+            iconeMode.classList.remove('fa-moon')
+            iconeMode.classList.add('fa-sun')
+            html.setAttribute('data-bs-theme', 'light')
+        }
+    })
+
     //effet stylés quand on passe la souris sur ces elements
     const spe = document.querySelectorAll('#slam, #sisr')
     spe.forEach((e) => {
