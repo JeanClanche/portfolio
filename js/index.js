@@ -113,6 +113,41 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     })
 
+    //remplissage des moyens de contact à partir du JSON
+    const contactsJSON = await fetch('data/contacts.json')
+    const contacts = JSON.parse(await contactsJSON.text())
+    const contactRow = document.getElementById('contactRow')
+    contacts.forEach((e) => {
+        const contactCol = document.createElement('div')
+        contactCol.classList.add('col-6', 'col-md-2')
+        const card = document.createElement('div')
+        card.classList.add('card', 'p-3', 'mt-3', 'border-3')
+        card.addEventListener('click', function(){
+            window.open(e['link'])
+        })
+        const icon = document.createElement('i')
+        icon.classList.add('card-img-top', 'fa-3x')
+        e['icon'].forEach((classe) => {
+            icon.classList.add(classe)
+        })
+        const body = document.createElement('div')
+        body.classList.add('card-body', 'text-center', 'pb-0')
+        const title = document.createElement('h5')
+        title.textContent = e['name']
+
+        card.addEventListener("mouseover", function(){
+            card.classList.add('border-primary', 'shadow-lg')
+        })
+        card.addEventListener("mouseout", function(){
+            card.classList.remove('border-primary', 'shadow-lg')
+        })
+
+        body.append(title)
+        card.append(icon, body)
+        contactCol.append(card)
+        contactRow.append(contactCol)
+    })
+
     updateOCDE()
 })
 
