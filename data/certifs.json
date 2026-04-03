@@ -1,0 +1,10 @@
+[
+    {
+        "nom" : "pix",
+        "chemin" : "./docs/pix.pdf"
+    },
+    {
+        "nom" : "secnum",
+        "chemin" : "./docs/secnum.pdf"
+    }
+]

@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
-    //affichage du pdf
-    PDFObject.embed("./docs/pix.pdf", "#pix")
-    PDFObject.embed("./docs/secnum.pdf", "#secnum")
 
     //ferme la navbar après un clic sur l'un les liens
     const links = document.querySelectorAll('a.nav-link')
@@ -166,6 +163,22 @@ document.addEventListener("DOMContentLoaded", async function() {
         card.append(icon, body)
         contactCol.append(card)
         contactRow.append(contactCol)
+    })
+
+    //remplissage des certifs à partir du JSON
+    const certifsJSON = await fetch('data/certifs.json')
+    const certifs = JSON.parse(await certifsJSON.text())
+    const certifRow = document.getElementById('certifRow')
+    certifs.forEach((e) => {
+        const colCertif = document.createElement('div')
+        colCertif.classList.add('col-12', 'col-xl-6')
+        const certif = document.createElement('div')
+        certif.setAttribute('id', e['nom'])
+
+        colCertif.append(certif)
+        certifRow.append(colCertif)
+
+        PDFObject.embed(e['chemin'], `#${e['nom']}`)
     })
 
     updateOCDE()
