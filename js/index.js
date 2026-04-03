@@ -280,7 +280,7 @@ async function updateOCDE() {
             rowHarmed.classList.add('border-warning', 'border', 'rounded', 'border-opacity-50', 'shadow')
             const colHarm = document.createElement('div')
             colHarm.classList.add('col', 'text-center', 'align-self-center')
-            colHarm.textContent = "People Harmed"
+            colHarm.textContent = "Affected stakeholders"
             const harmListCol = document.createElement('div')
             harmListCol.classList.add('col')
             const dmgList = document.createElement('ul')
