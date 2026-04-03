@@ -285,14 +285,14 @@ async function updateOCDE() {
 
         //affichages des types de personnes dommagées
         const rowHarmed = document.createElement('div')
-        rowHarmed.classList.add('row', 'mb-3')
+        rowHarmed.classList.add('row', 'mb-3', 'p-1')
         if(e['properties']['harm_types'].length > 0){
             rowHarmed.classList.add('border-warning', 'border', 'rounded', 'border-opacity-50', 'shadow')
             const colHarm = document.createElement('div')
             colHarm.classList.add('col', 'text-center', 'align-self-center')
             colHarm.textContent = "Affected stakeholders"
             const harmListCol = document.createElement('div')
-            harmListCol.classList.add('col')
+            harmListCol.classList.add('col', "align-self-center")
             const dmgList = document.createElement('ul')
             dmgList.classList.add('list-group', 'list-group-flush', 'mb-0')
 
