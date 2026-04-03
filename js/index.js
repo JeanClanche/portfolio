@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const title = document.createElement('h5')
         title.classList.add('fw-bold')
         const titleIcon = document.createElement('i')
-        titleIcon.classList.add('fa-solid', 'fa-certificate')
+        titleIcon.classList.add('fa-solid', 'fa-certificate', 'me-2')
         const titleTxt = document.createElement('span')
         titleTxt.textContent = e['nom']
 
@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", async function() {
         rowForma.append(title, listRow)
         formationsContainer.append(rowForma)
     })
+    //dernière liste sans marge en bas
+    formationsContainer.lastChild.lastChild.lastChild.classList.add('mb-0')
 
     //remplissage des compétences à partir du JSON
     const json = await fetch('data/competences.json')
