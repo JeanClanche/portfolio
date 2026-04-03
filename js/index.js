@@ -23,6 +23,13 @@ document.addEventListener("DOMContentLoaded", async function() {
         })
     })
 
+    //clique sur valider quand on appuie sur la touche entrée dans la recherche de la veille
+    document.getElementById('filtreVeille').addEventListener('keypress', function(e){
+        if(e.key === 'Enter'){
+            document.getElementById('sendDate').click()
+        }
+    })
+
     //selection d'une date par défaut dans le select
     const dateSelect = document.getElementById('dateSelect')
     dateSelect.value = getDateNow()
