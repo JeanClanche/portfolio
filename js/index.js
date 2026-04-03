@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", async function() {
         const mode = document.getElementById('mode')
         const iconeMode = document.getElementById('iconeMode')
         const html = document.getElementById('html')
-        console.log(mode.checked)
         if(mode.checked){
             iconeMode.classList.remove('fa-sun')
             iconeMode.classList.add('fa-moon')
