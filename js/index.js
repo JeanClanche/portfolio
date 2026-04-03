@@ -139,7 +139,9 @@ async function getIncidents(){
             languages: [],
             principles: []
         },
-        search_terms : []
+        search_terms : [
+            
+        ]
     }
     const response = await fetch(url, {
         method: 'POST',
