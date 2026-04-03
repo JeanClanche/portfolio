@@ -27,7 +27,39 @@ document.addEventListener("DOMContentLoaded", async function() {
     const dateSelect = document.getElementById('dateSelect')
     dateSelect.value = getDateNow()
 
-    //remplissage des compétences à partir du json
+    //remplissage des formations à partir du JSON
+    const formationsJSON = await fetch('data/formations.json')
+    const formations = JSON.parse(await formationsJSON.text())
+    const formationsContainer = document.getElementById('formationsContainer')
+    formations.forEach((e) => {
+        const rowForma = document.createElement('div')
+        rowForma.classList.add('row', "px-lg-5")
+
+        const title = document.createElement('h5')
+        title.classList.add('fw-bold')
+        const titleIcon = document.createElement('i')
+        titleIcon.classList.add('fa-solid', 'fa-certificate')
+        const titleTxt = document.createElement('span')
+        titleTxt.textContent = e['nom']
+
+        const listRow = document.createElement('div')
+        listRow.classList.add('row', 'px-lg-5')
+        const ul = document.createElement('ul')
+        ul.classList.add("list-grou")
+        e['infos'].forEach((ee) => {
+            const li = document.createElement('li')
+            li.classList.add("list-group-item")
+            li.textContent = ee
+            ul.append(li)
+        })
+
+        title.append(titleIcon, titleTxt)
+        listRow.append(ul)
+        rowForma.append(title, listRow)
+        formationsContainer.append(rowForma)
+    })
+
+    //remplissage des compétences à partir du JSON
     const json = await fetch('data/competences.json')
     const competences = JSON.parse(await json.text())
     const container = document.getElementById('competencesContainer')

@@ -1,0 +1,25 @@
+[
+    {
+        "nom" : "Brevet de technicien supérieur",
+        "infos" : [
+            "Option SLAM (Solutions Logicielles Application Métiers)",
+            "Orléans (45)"
+        ]
+    },
+    {
+        "nom" : "Première année de licence Musicologie - 2023/2024",
+        "infos" : [
+            "UFR Sorbonne Paris 18e"
+        ]
+    },
+    {
+        "nom" : "Baccalauréat général - 2023",
+        "infos" : [
+            "Mention Assez Bien",
+            "Spécialité Numérique et sciences informatiques",
+            "Spécialité Anglais monde contemporain",
+            "Option Musique",
+            "Chartres (28)"
+        ]
+    }
+]
