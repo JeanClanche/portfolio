@@ -22,5 +22,12 @@
         ],
         "name" : "Téléphone",
         "link" : "tel:0638418795"
+    },{
+        "icon" : [
+            "fa-brands",
+            "fa-linkedin"
+        ],
+        "name" : "LinkedIn",
+        "link" : "www.linkedin.com/in/pierre-maxime-verdier-542795369"
     }
 ]
