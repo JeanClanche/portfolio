@@ -1,18 +1,18 @@
 [
     {
-        "nom" : "pix",
-        "chemin" : "./docs/pix.pdf"
-    },
-    {
-        "nom" : "secnum",
-        "chemin" : "./docs/secnum.pdf"
-    },
-    {
         "nom" : "voltaire",
         "chemin" : "./docs/voltaire.pdf"
     },
     {
         "nom" : "cambridge",
         "chemin" : "./docs/cambridge.pdf"
+    },
+    {
+        "nom" : "pix",
+        "chemin" : "./docs/pix.pdf"
+    },
+    {
+        "nom" : "secnum",
+        "chemin" : "./docs/secnum.pdf"
     }
 ]
