@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         })
     })
 
-    //mode d'affichage
+    //mode d'affichage (sombre/clair)
     mode.addEventListener('change', function(e){
         const mode = document.getElementById('mode')
         const iconeMode = document.getElementById('iconeMode')
@@ -170,13 +170,24 @@ document.addEventListener("DOMContentLoaded", async function() {
     const certifs = JSON.parse(await certifsJSON.text())
     const certifRow = document.getElementById('certifRow')
     certifs.forEach((e) => {
+        const col = document.createElement('div')
+        col.classList.add('col-12', 'col-xl-5', 'mb-4', 'border', 'p-4', 'rounded-5', 'border-primary', 'border-3', 'shadow-lg')
+
+        const rowTitre = document.createElement('div')
+        rowTitre.classList.add('row', 'mb-2')
+
+        const titre = document.createElement('h4')
+        titre.textContent = e['titre']
+
         const colCertif = document.createElement('div')
-        colCertif.classList.add('col-12', 'col-xl-6', 'mb-4')
+        colCertif.classList.add('row')
         const certif = document.createElement('div')
         certif.setAttribute('id', e['nom'])
 
+        rowTitre.append(titre)
         colCertif.append(certif)
-        certifRow.append(colCertif)
+        col.append(rowTitre, colCertif)
+        certifRow.append(col)
 
         PDFObject.embed(e['chemin'], `#${e['nom']}`)
     })

@@ -1,18 +1,22 @@
 [
     {
         "nom" : "voltaire",
-        "chemin" : "./docs/voltaire.pdf"
+        "chemin" : "./docs/voltaire.pdf",
+        "titre" : "Certificat Voltaire"
     },
     {
         "nom" : "cambridge",
-        "chemin" : "./docs/cambridge.pdf"
+        "chemin" : "./docs/cambridge.pdf",
+        "titre" : "Certificat Cambridge"
     },
     {
         "nom" : "pix",
-        "chemin" : "./docs/pix.pdf"
+        "chemin" : "./docs/pix.pdf",
+        "titre" : "Certificat PIX"
     },
     {
         "nom" : "secnum",
-        "chemin" : "./docs/secnum.pdf"
+        "chemin" : "./docs/secnum.pdf",
+        "titre" : "Certificat SECNUM"
     }
 ]
