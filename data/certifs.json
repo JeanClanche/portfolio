@@ -12,11 +12,11 @@
     {
         "nom" : "pix",
         "chemin" : "./docs/pix.pdf",
-        "titre" : "Certificat PIX"
+        "titre" : "Certificat Pix"
     },
     {
         "nom" : "secnum",
         "chemin" : "./docs/secnum.pdf",
-        "titre" : "Certificat SECNUM"
+        "titre" : "Certificat SecNum"
     }
 ]
