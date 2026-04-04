@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     const certifRow = document.getElementById('certifRow')
     certifs.forEach((e) => {
         const colCertif = document.createElement('div')
-        colCertif.classList.add('col-12', 'col-xl-6')
+        colCertif.classList.add('col-12', 'col-xl-6', 'mb-4')
         const certif = document.createElement('div')
         certif.setAttribute('id', e['nom'])
 

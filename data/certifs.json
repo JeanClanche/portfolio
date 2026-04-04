@@ -6,5 +6,13 @@
     {
         "nom" : "secnum",
         "chemin" : "./docs/secnum.pdf"
+    },
+    {
+        "nom" : "voltaire",
+        "chemin" : "./docs/voltaire.pdf"
+    },
+    {
+        "nom" : "cambridge",
+        "chemin" : "./docs/cambridge.pdf"
     }
 ]

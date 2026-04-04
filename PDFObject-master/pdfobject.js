@@ -321,7 +321,7 @@
         let pdfOpenFragment = "";
         let customAttribute = opt.customAttribute || {};
         let fallbackFileNameForBase64 = opt.fallbackFileNameForBase64;
-        let fallbackHTML_default = "<p>This browser does not support inline PDFs. Please download the PDF to view it: [pdflink]</p>";
+        let fallbackHTML_default = "<p>Votre navigateur ne prend pas en charge l'affichage des documents PDF. Utilisez le lien suivant pour le consulter : [pdflink]</p>";
 
         //Ensure URL is available. If not, exit now.
         if(typeof url !== "string"){ return embedError("URL is not valid"); }
@@ -385,7 +385,7 @@
                 } else {
 
                     //Use default fallback link
-                    let link = "<a href='" + url + "'>Download PDF</a>";
+                    let link = "<a href='" + url + "'>Document PDF</a>";
                     targetNode.innerHTML = fallbackHTML_default.replace(/\[pdflink\]/g, link);
 
                 }
