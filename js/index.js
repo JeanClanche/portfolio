@@ -14,14 +14,19 @@ document.addEventListener("DOMContentLoaded", async function() {
         const mode = document.getElementById('mode')
         const iconeMode = document.getElementById('iconeMode')
         const html = document.getElementById('html')
+        const presentation = document.getElementById('presentation')
         if(mode.checked){
             iconeMode.classList.remove('fa-sun')
             iconeMode.classList.add('fa-moon')
             html.setAttribute('data-bs-theme', 'dark')
+            presentation.classList.remove('lightBg')
+            presentation.classList.add('darkBg')
         }else{
             iconeMode.classList.remove('fa-moon')
             iconeMode.classList.add('fa-sun')
             html.setAttribute('data-bs-theme', 'light')
+            presentation.classList.remove('darkBg')
+            presentation.classList.add('lightBg')
         }
     })
 
@@ -95,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         col.classList.add('col-6', 'col-md-3', 'col-lg-2')
 
         const card = document.createElement('div')
-        card.classList.add('card', 'p-4', 'pb-0', 'mb-3', 'text-center')
+        card.classList.add('card', 'p-4', 'pb-0', 'mb-3', 'text-center', 'competenceCard')
         //card.setAttribute('style', 'width: 15rem;')
         card.addEventListener('click', function(){
             window.open(e['link'])

@@ -1,12 +1,13 @@
-#presentation{
-    background-image: url('../pictures/tags.gif');
+.darkBg{
+    background-image: url('../pictures/spruce.webp');
     background-attachment: fixed;
-    /*
-    background-repeat: no-repeat;
-    */
+}
+.lightBg{
+    background-image: url('../pictures/birch.webp');
+    background-attachment: fixed;
 }
 
-.card{
+.competenceCard{
     cursor: help;
 }
 
