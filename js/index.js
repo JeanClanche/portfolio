@@ -253,7 +253,7 @@ async function getIncidents(){
 
 async function updateOCDE() {
     /**
-     * Remplis l'accordéon avec les informations récupérées avec l'api de l'OCDE
+     * Mets à jour l'accordéon avec les informations récupérées avec l'api de l'OCDE
      */
     const accordeon = document.getElementById('accordeon')
 
