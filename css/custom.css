@@ -11,6 +11,10 @@
     cursor: help;
 }
 
+.contactCard{
+    cursor: pointer;
+}
+
 .pdfobject-container {
     height: 700px;
 }
