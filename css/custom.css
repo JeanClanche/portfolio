@@ -20,6 +20,6 @@
 }
 
 #slam:hover, #sisr:hover, .card:hover{
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(0.0067turn);;
     transition: transform 0.2s ease;
 }
