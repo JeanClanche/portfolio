@@ -18,3 +18,8 @@
 .pdfobject-container {
     height: 700px;
 }
+
+#slam:hover, #sisr:hover, .card:hover{
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
