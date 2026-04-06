@@ -5,7 +5,8 @@
             "fa-envelope"
         ],
         "name" : "E-Mail",
-        "link" : "mailto:vpierremaxime@gmail.com"
+        "link" : "mailto:vpierremaxime@gmail.com",
+        "text" : "vpierremaxime@gmail.com"
     },
     {
         "icon" : [
@@ -13,7 +14,8 @@
             "fa-phone"
         ],
         "name" : "Tel.",
-        "link" : "tel:0638418795"
+        "link" : "tel:0638418795",
+        "text" : "+33 6.38.41.87.95"
     },
     {
         "icon" : [

@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     const contactRow = document.getElementById('contactRow')
     contacts.forEach((e) => {
         const contactCol = document.createElement('div')
-        contactCol.classList.add('col-6', 'col-sm-4', 'col-xl-2')
+        contactCol.classList.add('col-6', 'col-sm-4', 'col-xl-3')
         const card = document.createElement('div')
         card.classList.add('card', 'p-3', 'mt-3', 'border-3', 'pb-2', 'contactCard')
         card.addEventListener('click', function(){
@@ -154,8 +154,19 @@ document.addEventListener("DOMContentLoaded", async function() {
         })
         const body = document.createElement('div')
         body.classList.add('card-body', 'text-center', 'pb-0')
+        const rowTitle = document.createElement('div')
+        rowTitle.classList.add('row')
         const title = document.createElement('h5')
         title.textContent = e['name']
+        rowTitle.append(title)
+        body.append(rowTitle)
+        if(typeof e['text'] != 'undefined'){
+            const rowText = document.createElement('div')
+            rowText.classList.add('row')
+            const txt = document.createElement('span')
+            txt.textContent = e['text']
+            body.append(txt)
+        }
 
         card.addEventListener("mouseover", function(){
             card.classList.add('border-primary', 'shadow-lg')
@@ -164,7 +175,6 @@ document.addEventListener("DOMContentLoaded", async function() {
             card.classList.remove('border-primary', 'shadow-lg')
         })
 
-        body.append(title)
         card.append(icon, body)
         contactCol.append(card)
         contactRow.append(contactCol)
