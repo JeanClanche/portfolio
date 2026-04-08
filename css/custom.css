@@ -7,11 +7,11 @@
     background-attachment: fixed;
 }
 
-.competenceCard{
+#competences .card{
     cursor: help;
 }
 
-.contactCard{
+#contact  .card{
     cursor: pointer;
 }
 

@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         col.classList.add('col-6', 'col-md-3', 'col-lg-2')
 
         const card = document.createElement('div')
-        card.classList.add('card', 'p-4', 'pb-0', 'mb-3', 'text-center', 'competenceCard')
+        card.classList.add('card', 'p-4', 'pb-0', 'mb-3', 'text-center')
         //card.setAttribute('style', 'width: 15rem;')
         card.addEventListener('click', function(){
             window.open(e['link'])
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const contactCol = document.createElement('div')
         contactCol.classList.add('col-6', 'col-sm-4', 'col-xl-3')
         const card = document.createElement('div')
-        card.classList.add('card', 'p-3', 'mt-3', 'border-3', 'pb-2', 'contactCard')
+        card.classList.add('card', 'p-3', 'mt-3', 'border-3', 'pb-2')
         card.addEventListener('click', function(){
             window.open(e['link'])
         })
