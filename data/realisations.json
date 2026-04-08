@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "ACABA",
+        "desc" : "Outils de logistique et de gestion des accès au batiment pour le CNFPT d'Orléans",
+        "img" : "pictures/realisations/cnfpt.png"
+    },
+    {
+        "name" : "CheckMyStars",
+        "desc" : "Progiciel de notation d'hôtels, campings, meublés de tourisme et auberges collectives pour la société CETIRE",
+        "img" : "pictures/realisations/checkmystars.png"
+    }
+]

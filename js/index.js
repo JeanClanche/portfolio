@@ -207,6 +207,36 @@ document.addEventListener("DOMContentLoaded", async function() {
         PDFObject.embed(e['chemin'], `#${e['nom']}`)
     })
 
+    //remplissage des réalisations à partir du JSON
+    const realJSON = await fetch('data/realisations.json')
+    const real = JSON.parse(await realJSON.text())
+    const realRow = document.getElementById('realRow')
+    real.forEach((e) => {
+        const colCard = document.createElement('div')
+        colCard.classList.add('col-11', 'col-sm-4', 'mb-3')
+        const card = document.createElement('div')
+        card.classList.add('card')
+
+        const img = document.createElement('img')
+        img.setAttribute('src', e['img'])
+        img.classList.add('card-img-top')
+
+        const cardBody = document.createElement('div')
+        cardBody.classList.add('card-body')
+        const cardTitle = document.createElement('h5')
+        cardTitle.classList.add('card-title')
+        cardTitle.textContent = e['name']
+        const cardTxt = document.createElement('p')
+        cardTxt.classList.add('card-text')
+        cardTxt.textContent = e['desc']
+
+
+        cardBody.append(cardTitle, cardTxt)
+        card.append(img, cardBody)
+        colCard.append(card)
+        realRow.append(colCard)
+    })
+
     updateOCDE()
 })
 
