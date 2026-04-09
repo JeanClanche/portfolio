@@ -30,21 +30,6 @@ document.addEventListener("DOMContentLoaded", async function() {
         }
     })
 
-    //effet stylés quand on passe la souris sur ces elements
-    const spe = document.querySelectorAll('#slam, #sisr')
-    spe.forEach((e) => {
-
-        e.addEventListener('mouseover', function(){
-            e.classList.add('shadow-lg')
-            e.classList.add('border-primary')            
-        })
-        
-        e.addEventListener('mouseout', function(){
-            e.classList.remove('shadow-lg')
-            e.classList.remove('border-primary')            
-        })
-    })
-
     //clique sur valider quand on appuie sur la touche entrée dans la recherche de la veille
     document.getElementById('filtreVeille').addEventListener('keypress', function(e){
         if(e.key === 'Enter'){
@@ -237,13 +222,23 @@ document.addEventListener("DOMContentLoaded", async function() {
         realRow.append(colCard)
     })
 
+    //effet stylés quand on passe la souris sur ces elements
+    const spe = document.querySelectorAll('#slam, #sisr, #realisations .card')
+    spe.forEach((e) => {
+
+        e.addEventListener('mouseover', function(){
+            e.classList.add('shadow-lg')
+            e.classList.add('border-primary')            
+        })
+        
+        e.addEventListener('mouseout', function(){
+            e.classList.remove('shadow-lg')
+            e.classList.remove('border-primary')            
+        })
+    })
+
     updateOCDE()
 })
-
-/*
-const url = window.location.pathname.split('/')
-const page = url[url.length -1]
-*/
 
 async function getIncidents(){
     /**
