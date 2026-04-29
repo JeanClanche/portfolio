@@ -10,21 +10,21 @@
     },
     {
         "icon" : [
-            "fa-solid",
-            "fa-phone"
-        ],
-        "name" : "Tel.",
-        "link" : "tel:0638418795",
-        "text" : "+33 6.38.41.87.95"
-    },
-    {
-        "icon" : [
             "fa-brands",
             "fa-linkedin"
         ],
         "name" : "LinkedIn",
         "link" : "https://www.linkedin.com/in/pierre-maxime-verdier-542795369",
         "text" : "Pierre-Maxime Verdier"
+    },
+    {
+        "icon" : [
+            "fa-solid",
+            "fa-phone"
+        ],
+        "name" : "Tel.",
+        "link" : "tel:0638418795",
+        "text" : "+33 6.38.41.87.95"
     },
     {
         "icon" : [
