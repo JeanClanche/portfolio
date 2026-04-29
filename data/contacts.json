@@ -23,7 +23,8 @@
             "fa-linkedin"
         ],
         "name" : "LinkedIn",
-        "link" : "https://www.linkedin.com/in/pierre-maxime-verdier-542795369"
+        "link" : "https://www.linkedin.com/in/pierre-maxime-verdier-542795369",
+        "text" : "Pierre-Maxime Verdier"
     },
     {
         "icon" : [
@@ -31,6 +32,7 @@
             "fa-github"
         ],
         "name" : "Github",
-        "link" : "https://github.com/JeanClanche"
+        "link" : "https://github.com/JeanClanche",
+        "text" : "JeanClanche"
     }
 ]

@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const contactCol = document.createElement('div')
         contactCol.classList.add('col-6', 'col-sm-4', 'col-xl-3')
         const card = document.createElement('div')
-        card.classList.add('card', 'p-3', 'mt-3', 'border-3', 'pb-2')
+        card.classList.add('card', 'p-3', 'mt-3', 'border-3', 'pb-2', 'px-0')
         card.addEventListener('click', function(){
             window.open(e['link'])
         })
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             icon.classList.add(classe)
         })
         const body = document.createElement('div')
-        body.classList.add('card-body', 'text-center', 'pb-0')
+        body.classList.add('card-body', 'text-center', 'pb-0', 'px-2')
         const rowTitle = document.createElement('div')
         rowTitle.classList.add('row')
         const title = document.createElement('h5')
