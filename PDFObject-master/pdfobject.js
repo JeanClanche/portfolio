@@ -385,7 +385,7 @@
                 } else {
 
                     //Use default fallback link
-                    let link = "<a href='" + url + "'>Document PDF</a>";
+                    let link = "<a target='_blank' href='" + url + "'>Document PDF</a>";
                     targetNode.innerHTML = fallbackHTML_default.replace(/\[pdflink\]/g, link);
 
                 }
