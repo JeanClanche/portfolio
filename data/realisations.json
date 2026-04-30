@@ -3,7 +3,7 @@
         "name" : "ACABA",
         "desc" : "Outil de logistique et de gestion des accès au bâtiment pour le CNFPT d'Orléans",
         "img" : "pictures/realisations/cnfpt.png",
-        "tech" : ["PHP", "HTML/CSS", "JS", "DOS", "GIT", "MariaDB", "Oracle DB"]
+        "tech" : ["PHP", "HTML/CSS", "JS", "DOS", "GIT", "MariaDB", "OracleDB"]
     },
     {
         "name" : "CheckMyStars",
