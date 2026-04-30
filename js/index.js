@@ -214,9 +214,20 @@ document.addEventListener("DOMContentLoaded", async function() {
         const cardTxt = document.createElement('p')
         cardTxt.classList.add('card-text')
         cardTxt.textContent = e['desc']
+        const badgeRow = document.createElement('div')
+        badgeRow.classList.add('row', 'justify-content-start')
+        const badgeSpan = document.createElement('span')
+        e['tech'].forEach((ee) => {
+            const badge = document.createElement('span')
+            badge.classList.add('mx-1')
+            badge.classList.add('badge', 'text-bg-secondary')
+            badge.textContent = ee
+            badgeSpan.append(badge)
+        })
+        badgeRow.append(badgeSpan)
 
 
-        cardBody.append(cardTitle, cardTxt)
+        cardBody.append(cardTitle, cardTxt, badgeRow)
         card.append(img, cardBody)
         colCard.append(card)
         realRow.append(colCard)
