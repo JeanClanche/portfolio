@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         e['tech'].forEach((ee) => {
             const badge = document.createElement('span')
             badge.classList.add('mx-1')
-            badge.classList.add('badge', 'text-bg-secondary')
+            badge.classList.add('badge', 'text-bg-secondary', 'rounded-pill')
             badge.textContent = ee
             badgeSpan.append(badge)
         })
