@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     })
 
     //mode d'affichage (sombre/clair)
-    mode.addEventListener('change', function(e){
+    document.getElementById('mode').addEventListener('change', function(e){
         const mode = document.getElementById('mode')
         const iconeMode = document.getElementById('iconeMode')
         const html = document.getElementById('html')
