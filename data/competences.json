@@ -8,7 +8,7 @@
     {
         "pic" : "pictures/competences/css.png",
         "name" : "CSS",
-        "desc" : "Feuilles de style en cascade pour la mise en forme du HTML",
+        "desc" : "Feuilles de style en cascade",
         "link" : "https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade"
     },
     {
@@ -32,7 +32,7 @@
     {
         "pic" : "pictures/competences/python.png",
         "name" : "Python",
-        "desc" : "Langage de programmation interprété orienté objet",
+        "desc" : "Langage de programmation interprété",
         "link" : "https://fr.wikipedia.org/wiki/Python_(langage)"
     },
     {
@@ -44,7 +44,7 @@
     {
         "pic" : "pictures/competences/bootstrap.png",
         "name" : "Bootstrap",
-        "desc" : "Framework open-source orienté frontend et responsive",
+        "desc" : "Framework orienté frontend et responsive",
         "link" : "https://fr.wikipedia.org/wiki/Bootstrap_(framework)"
     },
     {
